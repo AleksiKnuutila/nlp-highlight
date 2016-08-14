@@ -16,7 +16,9 @@
     "exorcist": "^0.4.0",
     "findandreplacedomtext": "^0.4.4",
     "gulp": "^3.9.0",
+    "gulp-sass": "^2.3.2",
     "gulp-util": "^3.0.7",
+    "uikit": "^2.26.4",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
   }

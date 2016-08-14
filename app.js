@@ -1,4 +1,5 @@
 import User from "./src/model/user";
+import uikit from "uikit";
 import findAndReplaceDOMText from "findAndReplaceDOMText";
 
 var user = new User("Iran");

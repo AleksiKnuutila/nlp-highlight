@@ -6,6 +6,7 @@ var watchify    = require('watchify');
 var exorcist    = require('exorcist');
 var browserify  = require('browserify');
 var browserSync = require('browser-sync').create();
+var sass        = require('gulp-sass');
 
 // Input file.
 watchify.args.debug = true;
@@ -39,6 +40,13 @@ function bundle() {
 gulp.task('bundle', function () {
     return bundle();
 });
+
+gulp.task('styles', function() {
+    gulp.src('src/sass/**/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest('./dist/'));
+});
+
 
 /**
  * First bundle, then serve from the ./app directory
