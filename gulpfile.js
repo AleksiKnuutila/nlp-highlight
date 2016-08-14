@@ -1,7 +1,7 @@
 var gulp        = require('gulp');
 var gutil       = require('gulp-util');
 var source      = require('vinyl-source-stream');
-var babelify    = require('babelify');
+//var babelify    = require('babelify');
 var watchify    = require('watchify');
 var exorcist    = require('exorcist');
 var browserify  = require('browserify');
@@ -13,7 +13,7 @@ watchify.args.debug = true;
 var bundler = watchify(browserify('./app.js', watchify.args));
 
 // Babel transform
-bundler.transform(babelify);
+//bundler.transform(babelify);
 
 // On updates recompile
 bundler.on('update', bundle);
