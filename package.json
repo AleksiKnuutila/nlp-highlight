@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Iran Reyes <iranreyesfleitas@gmail.com> (http://www.iranreyes.com)",
+  "author": "Aleksi knuutila <aleksi.knuutila@iki.fi>",
   "license": "MIT",
   "devDependencies": {
     "babel-preset-es2015": "^6.3.13",
@@ -19,6 +19,7 @@
     "gulp-sass": "^2.3.2",
     "gulp-util": "^3.0.7",
     "jquery": "^3.1.0",
+    "textrazor": "^2.0.2",
     "uikit": "^2.26.4",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
