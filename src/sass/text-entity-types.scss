@@ -1,33 +1,38 @@
-$orange: #A84008;
-$red: #B20071;
-$purple: #26079B;
-$blue: #26079B;
-$green: #00A825;
-
+@import "colours.scss";
 
 span.type-place {
-  color: $green;
+  color: $place;
 }
 
 span.type-agent {
-  color: $red;
+  color: $agent;
+}
+
+span.type-company {
+  // combine the categories
+  color: $agent;
+}
+
+span.type-product {
+  // combine the categories
+  color: $agent;
 }
 
 span.type-person {
-  // quick hack
-  color: $red;
+  color: $person;
 }
 
 span.type-number {
-  color: $orange
+  color: $number;
 }
 
 span.type-duration {
-  color: $orange;
+  // combine the categories
+  color: $number;
 }
 
 span.type-quote {
-  color: $purple;
+  color: $quote;
 }
 
 // ['type'] = ['Agent']
