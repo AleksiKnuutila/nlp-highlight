@@ -11,26 +11,32 @@ var replaceText = function(json) {
   window.jQuery('#target2').html(nl2br(json['text']));
 }
 
+var findAndReplace = function(targetElement, regexp, types) {
+  findAndReplaceDOMText(targetElement, {
+    find: new RegExp(regexp, 'g'),
+    replace: function(portion) {
+      var el = document.createElement('span');
+      for(j=0;j<types.length;j++) {
+        el.className += 'type-'+ types[j].toLowerCase() + ' ';
+      }
+      el.innerHTML = portion.text;
+      return el;
+    }
+  });
+}
+
 highlightText = function(json) {
+  // Go through all of the entities recognised by the NLP processor
   for(i=0;i<json['entities'].length;i++) {
     if(json['entities'][i]['matchedText']) {
       var types = [];
       if(json['entities'][i]['type']) {
         types = json['entities'][i]['type'];
       }
-      findAndReplaceDOMText(document.getElementById('target'), {
-        find: new RegExp('\\b'+json['entities'][i]['matchedText']+'\\b', 'g'),
-        replace: function(portion) {
-      		var el = document.createElement('span');
-					for(j=0;j<types.length;j++) {
-        		el.className += 'type-'+ types[j].toLowerCase() + ' ';
-					}
-      		el.innerHTML = portion.text;
-      		return el;
-      	}
-      });
+      findAndReplace(document.getElementById('target'), '\\b'+json['entities'][i]['matchedText']+'\\b', types);
     }
   }
+  findAndReplace(document.getElementById('target'), '“.*?”', ['quote']);
 }
 
 function nl2br (str) {
@@ -42,11 +48,3 @@ window.jQuery.getJSON('/assets/clarkson.json', function(data) {
   replaceText(data);
   highlightText(data);
 });
-
-// ['type'] = ['Work']
-// ['type'] = ['Agent']
-// ['type'] = ['Place']
-// ['type'] = ['Company']
-// ['type'] = ['Number']
-// ['type'] = ['Duration']
-// ['type'] = ['Duration']
