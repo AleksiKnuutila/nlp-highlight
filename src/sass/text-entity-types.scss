@@ -4,11 +4,17 @@ span.type-place {
   color: $place;
 }
 
-span.type-agent {
+span.type-company {
+  // combine the categories
   color: $agent;
 }
 
-span.type-company {
+span.type-organisation {
+  // combine the categories
+  color: $agent;
+}
+
+span.type-organisation {
   // combine the categories
   color: $agent;
 }
@@ -21,6 +27,12 @@ span.type-product {
 span.type-person {
   color: $person;
 }
+
+/*
+span.type-agent {
+  color: $person;
+}
+*/
 
 span.type-number {
   color: $number;

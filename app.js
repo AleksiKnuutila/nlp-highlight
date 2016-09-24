@@ -84,9 +84,21 @@ var toggleHighlight = function(type) {
   // change colour of button
   var button = document.querySelector('#button-'+type);
   button.classList.toggle('button-off');
-  // change colour in text
   // TODO: we need some clustering of types here
-  toggleCSSRule(type);
+  // We combine several types recognised by NLP processor, to make UI simpler
+  var map = {
+    'place': ['place'],
+    'agent': ['company','product','organisation','newspaper'],
+//    'person': ['person', 'agent'],
+    'person': ['person'],
+    'number': ['number','duration'],
+    'quote': ['quote']
+  };
+  types = map[type];
+  // change colour in text
+  for(i=0;i<types.length;i++) {
+    toggleCSSRule(types[i]);
+  }
 }
 
 window.jQuery.getJSON('/assets/clarkson.json', function(data) {
