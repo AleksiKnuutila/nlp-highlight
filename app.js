@@ -26,6 +26,8 @@ var findAndReplace = function(targetElement, regexp, types) {
 }
 
 highlightText = function(json) {
+  // NLP processor doesn't pick up on quotes so we'll do that separately
+  findAndReplace(document.getElementById('target'), '“.*?”', ['quote']);
   // Go through all of the entities recognised by the NLP processor
   for(i=0;i<json['entities'].length;i++) {
     if(json['entities'][i]['matchedText']) {
@@ -36,7 +38,6 @@ highlightText = function(json) {
       findAndReplace(document.getElementById('target'), '\\b'+json['entities'][i]['matchedText']+'\\b', types);
     }
   }
-  findAndReplace(document.getElementById('target'), '“.*?”', ['quote']);
 }
 
 function nl2br (str) {

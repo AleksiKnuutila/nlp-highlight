@@ -1,21 +1,33 @@
-span.type-quote {
-  color: red;
-}
+$orange: #A84008;
+$red: #B20071;
+$purple: #26079B;
+$blue: #26079B;
+$green: #00A825;
+
 
 span.type-place {
-  color: red;
+  color: $green;
 }
 
 span.type-agent {
-  color: red;
+  color: $red;
+}
+
+span.type-person {
+  // quick hack
+  color: $red;
 }
 
 span.type-number {
-  color: red;
+  color: $orange
 }
 
 span.type-duration {
-  color: red;
+  color: $orange;
+}
+
+span.type-quote {
+  color: $purple;
 }
 
 // ['type'] = ['Agent']
