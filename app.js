@@ -87,7 +87,6 @@ var toggleHighlight = function(type) {
   // change colour of button
   var button = document.querySelector('#button-'+type);
   button.classList.toggle('button-off');
-  // TODO: we need some clustering of types here
   // We combine several types recognised by NLP processor, to make UI simpler
   var map = {
     'place': ['place'],
