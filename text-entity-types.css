@@ -1,0 +1,31 @@
+span.type-place {
+  color: #93A661; }
+
+span.type-company {
+  color: #9A2617; }
+
+span.type-newspaper {
+  color: #9A2617; }
+
+span.type-organisation {
+  color: #9A2617; }
+
+span.type-product {
+  color: #9A2617; }
+
+span.type-person {
+  color: #C2571A; }
+
+/*
+span.type-agent {
+  color: $person;
+}
+*/
+span.type-number {
+  color: #BCA136; }
+
+span.type-duration {
+  color: #BCA136; }
+
+span.type-quote {
+  color: #107896; }
