@@ -1,6 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 // This file can be generated with scripts/getjson.js
-const NLP_DATA_FILE = '/assets/clarkson.json';
+const NLP_DATA_FILE = '/dist/clarkson.json';
 
 window.jQuery = require('jquery');
 var Mustache = require('mustache');
@@ -190,7 +190,7 @@ window.jQuery.getJSON(NLP_DATA_FILE, function(data) {
 					m.index += m[0].indexOf(cg);
 					m[0] = cg;
 				}
-		 
+
 				m.endIndex = m.index + m[0].length;
 				m.startIndex = m.index;
 				m.index = mi;
@@ -207,9 +207,9 @@ window.jQuery.getJSON(NLP_DATA_FILE, function(data) {
 		return true;
 	}
 
-	/** 
+	/**
 	 * findAndReplaceDOMText
-	 * 
+	 *
 	 * Locates matches and replaces with replacementNode
 	 *
 	 * @param {Node} node Element or Text node to search within
@@ -358,7 +358,7 @@ window.jQuery.getJSON(NLP_DATA_FILE, function(data) {
 			if (!match[0]) {
 				throw new Error('findAndReplaceDOMText cannot handle zero-length matches');
 			}
-	 
+
 			match.endIndex = characterOffset + match.index + match[0].length;
 			match.startIndex = characterOffset + match.index;
 			match.index = matchIndex;
@@ -426,10 +426,10 @@ window.jQuery.getJSON(NLP_DATA_FILE, function(data) {
 				return txt;
 
 			}
-			
+
 		},
 
-		/** 
+		/**
 		 * Steps through the target node, looking for matches, and
 		 * calling replaceFn when a match is found.
 		 */
@@ -501,7 +501,7 @@ window.jQuery.getJSON(NLP_DATA_FILE, function(data) {
 					curNode = this.replaceMatch(match, startPortion, innerPortions, endPortion);
 
 					// processMatches has to return the node that replaced the endNode
-					// and then we step back so we can continue from the end of the 
+					// and then we step back so we can continue from the end of the
 					// match:
 
 					atIndex -= (endPortion.node.data.length - endPortion.endIndexInNode);
