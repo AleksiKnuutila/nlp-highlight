@@ -43,7 +43,7 @@ gulp.task('bundle', function () {
 });
 
 gulp.task('styles', function() {
-    gulp.src('src/sass/**/*.scss')
+    gulp.src('sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./dist/'));
 });
