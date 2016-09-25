@@ -9,7 +9,16 @@ The demo uses the NLP SaaS TextRazor, and particularly the classifications in it
 
 ## Usage
 
-`scripts/
+`scripts/getjson.js` makes a request from the TextRazor API and saves the result as JSON that is later consumed to do the highlighting. The script takes the TextRazor API key as an argument, reads the analysed text from standard input and prints the JSON. An example of usage is:
+
+`cat article.txt | node scripts/getjson.js api-key > assets/article-analysed.js`
+
+The location of the JSON data is indicated in the first lines of `app.js`.
+
+To compile the demo, run:
+
+`npm install`
+`gulp`
 
 ## Demo
 
