@@ -1,3 +1,4 @@
+// This file can be generated with scripts/getjson.js
 const NLP_DATA_FILE = '/assets/clarkson.json';
 
 window.jQuery = require('jquery');
