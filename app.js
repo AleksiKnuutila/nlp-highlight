@@ -71,16 +71,6 @@ var toggleCSSRule = function(ruleName) {
   }
 }
 
-// Place the un-highlighted text in the right elements
-// (TODO: remove hardcoded IDs from function)
-var replaceText = function(json) {
-  var template = window.jQuery('#template').html();
-  Mustache.parse(template);
-  var rendered = Mustache.render(template, {textbody: json['text']});
-  window.jQuery('#target').html(nl2br(rendered));
-  window.jQuery('#target2').html(nl2br(json['text']));
-}
-
 // Toggles whether type of entity is highlighted
 // This is called from button onclick events
 var toggleHighlight = function(type) {
@@ -103,8 +93,18 @@ var toggleHighlight = function(type) {
   }
 }
 
+// Place the un-highlighted text in the right elements
+// (TODO: remove hardcoded IDs from function)
+var placeText = function(json) {
+  var template = window.jQuery('#template').html();
+  Mustache.parse(template);
+  var rendered = Mustache.render(template, {textbody: json['text']});
+  window.jQuery('#target').html(nl2br(rendered));
+  window.jQuery('#target2').html(nl2br(json['text']));
+}
+
 window.jQuery.getJSON(NLP_DATA_FILE, function(data) {
-  replaceText(data);
+  placeText(data);
   highlightText(data['entities'], document.getElementById('target'));
   document.getElementById('button-person').addEventListener('click', function() { toggleHighlight('person'); });
   document.getElementById('button-agent').addEventListener('click', function() { toggleHighlight('agent'); });
