@@ -45,17 +45,17 @@ var nl2br = function(str) {
 
 // Unorthodox approach: let's modify the CSS rules instead of elements
 var getCSSRule = function(ruleName) {
-	ruleName = ruleName.toLowerCase();
-	var result = null;
-	var find = Array.prototype.find;
-	find.call(document.styleSheets, styleSheet => {
-		result = find.call(styleSheet.cssRules, cssRule => {
-			return cssRule instanceof CSSStyleRule
-				&& cssRule.selectorText.toLowerCase() == ruleName;
-		});
-		return result != null;
-	});
-	return result;
+  ruleName = ruleName.toLowerCase();
+  var result = null;
+  var find = Array.prototype.find;
+  find.call(document.styleSheets, styleSheet => {
+    result = find.call(styleSheet.cssRules, cssRule => {
+      return cssRule instanceof CSSStyleRule
+        && cssRule.selectorText.toLowerCase() == ruleName;
+    });
+    return result != null;
+  });
+  return result;
 }
 
 // Most direct way to toggle a CSS rule is by renaming it
