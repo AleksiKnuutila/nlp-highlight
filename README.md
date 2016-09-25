@@ -18,6 +18,7 @@ The location of the JSON data is indicated in the first lines of `app.js`.
 To compile the demo, run:
 
 `npm install`
+
 `gulp`
 
 ## Demo
