@@ -1,11 +1,11 @@
 @import "colours.scss";
 
 .round-button {
-	border-radius: 5px;
-	border: 1px solid;
-	background-color: #eee;
-	width: 135px;
-	margin-bottom: 30px;
+  border-radius: 5px;
+  border: 1px solid;
+  background-color: #eee;
+  width: 135px;
+  margin-bottom: 30px;
 }
 
 .button-off {
@@ -43,10 +43,3 @@
   background-color: $number;
   color: white;
 }
-
-// ['type'] = ['Agent']
-// ['type'] = ['Work']
-// ['type'] = ['Place']
-// ['type'] = ['Company']
-// ['type'] = ['Number']
-// ['type'] = ['Duration']
