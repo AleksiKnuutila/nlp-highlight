@@ -7,6 +7,7 @@ var exorcist    = require('exorcist');
 var browserify  = require('browserify');
 var browserSync = require('browser-sync').create();
 var sass        = require('gulp-sass');
+var ghPages     = require('gulp-gh-pages');
 
 // Input file.
 watchify.args.debug = true;
@@ -56,3 +57,9 @@ gulp.task('default', ['bundle'], function () {
         server: "./"
     });
 });
+
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
+

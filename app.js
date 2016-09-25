@@ -1,3 +1,5 @@
+const NLP_DATA_FILE = '/assets/clarkson.json';
+
 window.jQuery = require('jquery');
 var Mustache = require('mustache');
 var uikit = require('uikit');
@@ -101,7 +103,7 @@ var toggleHighlight = function(type) {
   }
 }
 
-window.jQuery.getJSON('/assets/clarkson.json', function(data) {
+window.jQuery.getJSON(NLP_DATA_FILE, function(data) {
   replaceText(data);
   highlightText(data['entities'], document.getElementById('target'));
   document.getElementById('button-person').addEventListener('click', function() { toggleHighlight('person'); });
