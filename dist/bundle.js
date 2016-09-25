@@ -2,6 +2,7 @@
 // This file can be generated with scripts/getjson.js
 const NLP_DATA_FILE = '/nlp-highlight/assets/clarkson.json';
 
+
 window.jQuery = require('jquery');
 var Mustache = require('mustache');
 var uikit = require('uikit');
